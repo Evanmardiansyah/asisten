@@ -327,9 +327,7 @@
     <script>
         // --- KONFIGURASI MODEL & BACKEND --- 
         
-        // GANTI INI dengan URL Cloudflare Worker kamu
-        const BACKEND_URL = "https://NAMA-WORKER-KAMU.subdomain.workers.dev/chat";
-
+        const BACKEND_URL = "https://asisten.evanmardiansyah38.workers.dev";
         const VISION_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"; 
         
         let chatHistory = []; 
@@ -548,7 +546,7 @@ ATURAN WAJIB:
                 innerContent += contentHtml;
                 
                 if (modelName) {
-                    innerContent += `<div class="model-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg> ${modelName}</div>`;
+                    innerContent += `<div class="model-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-.49.06-.99.1-1.5.1-3.95 0-7.21-3.09-7.48-7h2.02c.25 2.87 2.52 5.14 5.48 5.44V19.93zm6.9-2.54c-.76.76-1.72 1.32-2.76 1.61V16.5c1.51-.31 2.71-1.51 3.02-3.02h2.5c-.29 1.79-1.09 3.41-2.29 4.61z"/></svg> ${modelName}</div>`;
                 }
 
                 wrapper.innerHTML = `<div class="avatar">${iconSVG}</div><div class="message-content">${innerContent}<div class="msg-toolbar"><button class="icon-btn" onclick="copyText(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button></div></div>`;
